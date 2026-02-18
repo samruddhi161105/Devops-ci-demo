@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Combined Project</title>
+    
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            background: #1e293b;
+            border-radius: 16px;
+            border: 1px solid #334155;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 8px;
+            color: #38bdf8;
+        }
+
+        p {
+            color: #94a3b8;
+            margin-bottom: 24px;
+        }
+
+        #status-btn {
+            background-color: #38bdf8;
+            color: #0f172a;
+            border: none;
+            padding: 12px 24px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        #status-btn:hover {
+            background-color: #7dd3fc;
+        }
+
+        .log {
+            margin-top: 20px;
+            font-family: monospace;
+            font-size: 0.8rem;
+            color: #22c55e;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Hello World</h1>
+        <p>DevOps Deployment Test Page</p>
+        
+        <button id="status-btn">Check System Health</button>
+        
+        <div id="output" class="log"></div>
+    </div>
+
+    <script>
+        const btn = document.getElementById('status-btn');
+        const output = document.getElementById('output');
+
+        btn.addEventListener('click', () => {
+            const timestamp = new Date().toLocaleTimeString();
+            output.innerText = `[${timestamp}] System Status: 200 OK - Deployment Successful!`;
+            
+            // Log to browser console (F12)
+            console.log("Health check triggered at " + timestamp);
+        });
+    </script>
+</body>
+</html>
